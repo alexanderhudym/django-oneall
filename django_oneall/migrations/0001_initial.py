@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('user_token', models.UUIDField(serialize=False, primary_key=True)),
                 ('raw', models.TextField(default='{}')),
-                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, null=True)),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)),
             ],
         ),
         migrations.CreateModel(
