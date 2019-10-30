@@ -22,7 +22,7 @@ class SocialUserCache(models.Model):
     """
     user_token = models.UUIDField(primary_key=True)
     raw = models.TextField(default='{}')
-    user = models.ForeignKey(django_settings.AUTH_USER_MODEL, null=True)
+    user = models.ForeignKey(django_settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
 
     def __init__(self, *args, **kwargs):
         """
